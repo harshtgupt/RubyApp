@@ -1,0 +1,18 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+	  sinatra
+	  sinatra-cross_origin
+	  json
+	  data_mapper
+	  dm-mysql-adapter
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+	sinatra
+	sinatra-cross_origin
+	json
+	data_mapper
+	dm-mysql-adapter
