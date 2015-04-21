@@ -4,6 +4,10 @@ require 'sinatra'
 require 'data_mapper'
 require 'dm-migrations'
 
+get '/' do
+  "Hello World!"
+end
+
 configure :development do
   enable :cross_origin
   DataMapper::Logger.new($stdout, :debug)
