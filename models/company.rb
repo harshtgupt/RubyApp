@@ -4,7 +4,7 @@ class Company
 
   property :id,         Serial
   property :name,       String, :required => true
-  property :address,    Text, :required => true
+  property :address,    Text,   :required => true
   property :city,       String, :required => true
   property :country,    String, :required => true
   property :email,      String
