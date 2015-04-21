@@ -3,7 +3,6 @@ require 'json'
 require 'sinatra'
 require 'data_mapper'
 require 'dm-migrations'
-require 'sinatra'
 
 configure :development do
   enable :cross_origin

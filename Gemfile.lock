@@ -81,5 +81,6 @@ DEPENDENCIES
   data_mapper (= 1.2.0)
   dm-mysql-adapter (= 1.2.0)
   dm-postgres-adapter (= 1.2.0)
+  rack
   sinatra (= 1.4.5)
   sinatra-cross_origin (~> 0.3.1)
