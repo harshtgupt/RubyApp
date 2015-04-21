@@ -10,7 +10,7 @@ configure :development do
   DataMapper::Logger.new($stdout, :debug)
   DataMapper.setup(
     :default,
-    'sqlite3://root:12345@localhost/sinatra_service'
+    'postgres://loprqdusbqcoyr:xfvbD5aE0RkF7OZ8GQFEpSgr9X@ec2-50-17-192-136.compute-1.amazonaws.com:5432/d7i4sid944mqig'
   )
 end
 
@@ -18,7 +18,7 @@ configure :production do
   enable :cross_origin
   DataMapper.setup(
     :default,
-    'sqlite3://root:12345@localhost/sinatra_service'
+    'postgres://loprqdusbqcoyr:xfvbD5aE0RkF7OZ8GQFEpSgr9X@ec2-50-17-192-136.compute-1.amazonaws.com:5432/d7i4sid944mqig'
   )
 end
 
