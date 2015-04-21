@@ -1,1 +1,0 @@
-web: bundle main.rb
