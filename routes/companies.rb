@@ -1,5 +1,9 @@
 # encoding: UTF-8
 
+get '/companies/test' do
+  return "Test Sucsessful"
+end
+
 get '/companies' do
   format_response(Company.all, request.accept)
 end
