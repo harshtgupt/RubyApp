@@ -36,9 +36,10 @@ post '/companies' do
   # Below Insertions should happen in one query in case there is big list.
   # Datamapper Does't support adding multiple records in one call so we can write the sql query for this
   body['directors'].each do |child|
-    company.directors << Director.create(
+   Director.create(
     name:   child['name'],
-    fileLoc: ""
+    fileLoc: "NoFile",
+    company: company
     )
   end
   company.save
