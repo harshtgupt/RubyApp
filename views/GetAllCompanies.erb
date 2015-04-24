@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<script src="/javascripts/angular.js"></script>
+		<script src="/javascripts/GetAllCompanies.js"></script>
+	</head>
+
+	<body>
+		<h2>Companies List</h2>
+
+		<div  ng-app="myApp"  name="getAllCompanies" ng-controller="getAllCompanies" >
+
+			<div ng-show="loadError">
+				<span style="color:red">Error Loading Data</span>
+			</div>
+			<div  ng-show="hide" >
+
+				<ul>
+					<li ng-repeat="company in companies">
+
+						<p>
+							Id     :{{ company.id }}
+						</p>
+
+						<p>
+							Name     :{{ company.name }}
+						</p>
+
+						<p>
+							Address  :{{ company.address }}
+						</p>
+
+						<p>
+							City     :{{ company.city }}
+						</p>
+
+						<p>
+							Country  :{{ company.country }}
+						</p>
+
+						<p>
+							Email    :{{ company.email }}
+						</p>
+
+						<p>
+							Phone    :{{ company.phno }}
+						</p>
+
+						<p>
+							Diroctors List:
+						</p>
+
+						<ul>
+							<li ng-repeat="item in company.directors">
+								<p>
+									Id:  {{item.id}}
+								</p>
+								<p>
+									Name: {{item.name}}
+								</p>
+								<p>
+									File: {{item.fileLoc}}
+								</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+
+	</body>
+</html>

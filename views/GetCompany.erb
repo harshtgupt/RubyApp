@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<script src="/javascripts/angular.js"></script>
+		<script src="/javascripts/GetCompany.js"></script>
+	</head>
+
+	<body>
+		<h2>Company Info</h2>
+
+		<div  ng-app="myApp"  name="getCompany" ng-controller="getCompany" >
+
+			<p>
+				Enter Company Id:
+				<input type="number" ng-model="companyId" size="39" required>
+				<input type="submit" ng-click="onsubmit()">
+			</p>
+
+			<div ng-show="loadError">
+				<span style="color:red">Error Loading Data</span>
+			</div>
+
+			<div  ng-show="hide" >
+				<p>
+					Name     :{{ company.name }}
+				</p>
+
+				<p>
+					Address  :{{ company.address }}
+				</p>
+
+				<p>
+					City     :{{ company.city }}
+				</p>
+
+				<p>
+					Country  :{{ company.country }}
+				</p>
+
+				<p>
+					Email    :{{ company.email }}
+				</p>
+
+				<p>
+					Phone    :{{ company.phno }}
+				</p>
+
+				<br>
+
+				<p>
+					Diroctors List:
+				</p>
+
+				<ul>
+					<li ng-repeat="item in company.directors">
+						<p>
+							Id:  {{item.id}}
+						</p>
+						<p>
+							Name: {{item.name}}
+						</p>
+						<p>
+							File: {{item.fileLoc}}
+						</p>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+
+		<!-- <script>
+			var app = angular.module('myApp', []);
+			app.controller('getCompany', function($scope, $http) {
+
+				$scope.onsubmit = function() {
+					$http.get('http://127.0.0.1:4567/companies/' + $scope.companyId).success(function(result) {
+						$scope.company = result;
+						$scope.hide = true;
+						$scope.loadError = false;
+					}).error(function() {
+						$scope.loadError = true;
+					});
+				}
+			});
+
+		</script> -->
+
+	</body>
+</html>

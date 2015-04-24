@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<script src="/javascripts/angular.js"></script>
+		<script src="/javascripts/UpdateCompany.js"></script>
+	</head>
+
+	<body>
+		<h2>Update Company</h2>
+
+		<form  ng-app="myApp"  ng-controller="updateform" name="myForm" novalidate>
+
+			<p>
+				Enter Company Id:
+				<input type="number" ng-model="companyId" size="39" required="">
+				<input type="submit" ng-click="onsubmit()">
+			</p>
+
+			<div ng-show="loadError">
+				<span style="color:red">Error Loading Data</span>
+			</div>
+
+			<div ng-show="showData" ng-init="showData=false">
+
+				<p>
+					Name:
+					<br>
+					<input type="text" name="name" ng-model="company.name" required>
+					<span style="color:red" ng-show="myForm.name.$dirty && myForm.name.$invalid"> <span ng-show="myForm.name.$error.required">Name is required.</span> </span>
+				</p>
+
+				<p>
+					Address:
+					<br>
+					<input type="text" name="address" ng-model="company.address" required>
+					<span style="color:red" ng-show="myForm.address.$dirty && myForm.address.$invalid"> <span ng-show="myForm.address.$error.required">Address is required.</span> </span>
+				</p>
+
+				<p>
+					City:
+					<br>
+					<input type="text" name="city" ng-model="company.city" required>
+					<span style="color:red" ng-show="myForm.city.$dirty && myForm.city.$invalid"> <span ng-show="myForm.city.$error.required">City is required.</span> </span>
+				</p>
+
+				<p>
+					Country:
+					<br>
+					<input type="text" name="country" ng-model="company.country" required>
+					<span style="color:red" ng-show="myForm.country.$dirty && myForm.country.$invalid"> <span ng-show="myForm.country.$error.required">Country is required.</span> </span>
+				</p>
+
+				<p>
+					Email:
+					<br>
+					<input type="email" name="email" ng-model="company.email">
+					<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid"> <span ng-show="myForm.email.$error.email">Invalid Email address.</span> </span>
+				</p>
+
+				<p>
+					Phone:
+					<br>
+					<input type="text" name="phone" ng-model="company.phno">
+					<span style="color:red" ng-show="myForm.phone.$dirty && myForm.phone.$invalid"> </span>
+				</p>
+
+				<br>
+
+				<div ng-repeat="item in directors">
+					<p>
+						Name:
+						<input type="text"  name="directorname" ng-model="item.name" size="40" required="">
+						<span style="color:red" ng-show="myForm.directorname.$dirty && myForm.directorname.$invalid"> <span ng-show="myForm.directorname.$error.required">File is required.</span>
+					</p>
+					Passport Copy:
+					<input type="file" ng-file-select="" ng-model="item.fileLoc" name="file" accept="application/pdf" onchange="angular.element(this).scope().fileNameChanged(this)" required="">
+					<br>
+					<br>
+				</div>
+				
+				
+				<p>
+					<input type="submit" value="Update" ng-click="update()"
+					ng-disabled="myForm.name.$dirty && myForm.name.$invalid  || myForm.address.$dirty && myForm.address.$invalid  || myForm.city.$dirty && myForm.city.$invalid || myForm.country.$dirty && myForm.country.$invalid ||
+					myForm.email.$dirty && myForm.email.$invalid">
+					{{ resultData }}
+				</p>
+
+			</div>
+
+		</form>
+
+	</body>
+</html>

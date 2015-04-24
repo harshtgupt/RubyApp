@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<script src="/javascripts/angular.js"></script>
+		<script src="/javascripts/DeleteCompany.js"></script>
+	</head>
+
+	<body>
+		<h2>Delete Company</h2>
+
+		<div  ng-app="myApp"  name="deleteCompany" ng-controller="deleteCompany" >
+
+			<p>
+				Enter Company Id:
+				<input type="number" ng-model="companyId" size="39" required="">
+				<input type="submit" ng-click="onsubmit()">
+			</p>
+			<div>
+				{{ Result }}
+			</div>
+			
+
+		</div>
+
+	</body>
+</html>
