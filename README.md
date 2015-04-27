@@ -97,8 +97,6 @@ https://peaceful-falls-8534.herokuapp.com/DeleteCompany
 ***
 ###post '/upload/:id'
 Posting the Pdf file with Director or Sponsor Id
-#####Sample Curl Call
-curl -i -X POST -H "Content-Type: application/pdf" -F "myfile=@test.pdf" https://peaceful-falls-8534.herokuapp.com/upload/1
 #####File Save Location
 All Files will be saved under folder 'public/uploads'. Currently One Director can have only one File to upload. Director Id will be concatenated to Filename to differentiate between multiple directors uploading files with same File name. File will be saved as {id} + '_' + {Filename}
 #####Web Page Client Deployement on Heroku
