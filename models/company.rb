@@ -35,33 +35,9 @@ def convertCompanyObjectToHash(hash,company)
     hash["phno"] = company[:phno]
 end
 
-    # create_table :company do |t|
-      # t.string :name
-	  # t.string :address
-	  # t.string :city
-	  # t.string :country
-    # end
-#  
-    # create_table :directors do |t|
-      # t.belongs_to :company, index:true
-      # t.string :name
-      # t.string : fileLoc
-    # end
-  # end
-# end
-# 
-# 
-# class CreateCustomers < ActiveRecord::Migration
-  # def change
-    # create_table :customers do |t|
-      # t.string :name
-      # t.timestamps null: false
-    # end
-#  
-    # create_table :orders do |t|
-      # t.belongs_to :customer, index:true
-      # t.datetime :order_date
-      # t.timestamps null: false
-    # end
-  # end
-# end
+def companyResponse(company,directorsArray)
+  returnData = {}
+  convertCompanyObjectToHash(returnData,company)
+  returnData["directors"] = directorsArray
+  return returnData
+end
