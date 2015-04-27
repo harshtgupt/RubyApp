@@ -12,16 +12,22 @@ If you have any questions about this project, feel free to e-mail me at **harshi
 2. Installation
 3. Rest API's
 4. Front End UI
+
 ***
+
 ##1. Introduction
 This Is a sample Application Containing the Rest API's and Web based client to use it
+
  ***
+ 
 ##2. Installation
-1. Install the required gems.
-2. Run "bundle install" to install the bundle
-3. Run "rake migrate" to create the databases
-4. Run "ruby main.rb" to run the application
+- Install the required gems.
+- Run "bundle install" to install the bundle
+- Run "rake migrate" to create the databases
+- Run "ruby main.rb" to run the application
+
 ***
+
 ##3. Rest API's
 Below are the rest API's
 
